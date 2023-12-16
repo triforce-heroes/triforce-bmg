@@ -53,7 +53,11 @@ export class Rebuilder {
 
     for (const [index, [value]] of this.stringsMap) {
       stringsOffsets.set(index, stringsBuilder.length);
-      stringsBuilder.writeNullTerminatedString(value);
+      stringsBuilder.writeNullTerminatedString(
+        value !== null && value !== undefined
+          ? Buffer.from(value, "binary")
+          : value,
+      );
     }
 
     const stringsBuilderData = stringsBuilder.build();

@@ -25,7 +25,7 @@ describe("class Patcher", () => {
 
     sample.patchString(10, "A");
     sample.patchString(20, "B");
-    sample.patchString(30, "C");
+    sample.patchString(30, "ÿ");
     sample.patchString(40, null);
     sample.patchString(50, "E");
 
