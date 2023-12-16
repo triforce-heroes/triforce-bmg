@@ -18,7 +18,7 @@ export class Patcher {
         continue;
       }
 
-      this.rebuilder.addString(index, strings.get(index)![0]!, attributes);
+      this.rebuilder.addString(index, strings.get(index)![0], attributes);
     }
 
     for (const [name, data] of sections) {
@@ -28,7 +28,7 @@ export class Patcher {
     }
   }
 
-  public patchString(index: number, value: string) {
+  public patchString(index: number, value: string | null | undefined) {
     this.rebuilder.updateString(index, value);
   }
 

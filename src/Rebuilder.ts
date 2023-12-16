@@ -6,7 +6,7 @@ import {
 
 import { DataSection } from "./types/DataSection.js";
 
-type StringMapped = [value: string, attributes: Buffer];
+type StringMapped = [value: string | null | undefined, attributes: Buffer];
 
 export class Rebuilder {
   private readonly stringsMap = new Map<number, StringMapped>();
@@ -22,12 +22,16 @@ export class Rebuilder {
     this.stringsMap.set(-1, ["", Buffer.alloc(this.attributesLength)]);
   }
 
-  public addString(index: number, value: string, attributes: Buffer): void {
+  public addString(
+    index: number,
+    value: string | null | undefined,
+    attributes: Buffer,
+  ): void {
     this.stringsMap.set(index, [value, attributes]);
     this.infoEntries.push(index);
   }
 
-  public updateString(index: number, value: string) {
+  public updateString(index: number, value: string | null | undefined) {
     const string = this.stringsMap.get(index);
 
     if (string) {
