@@ -1,0 +1,1 @@
+export function parseInfo(n){let e=[],r=n.readUnsignedInt16(),d=n.readUnsignedInt16();n.skip(4);for(let t=0;t<r;t++)e.push([n.readUnsignedInt32(),n.readUnsignedInt16(),n.read(d-6)]);return e}

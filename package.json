@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rimraf ./dist && tsc -p ./tsconfig.build.json && swc ./dist -d ./dist",
-    "bmg": "tsx ./src/command.ts",
+    "bmg": "node ./dist/command.js",
     "bmg:watch": "tsx watch ./src/command.ts",
     "prettier": "prettier --check ./src",
     "prettier:fix": "prettier --write ./src",

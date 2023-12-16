@@ -1,0 +1,1 @@
+import{fatal as r}from"@triforce-heroes/triforce-core";export function parseHeader(e){("MESG"!==e.readString(4)||"bmg1"!==e.readString(4))&&r("Invalid BMG header"),e.skip(4);let t=e.readUnsignedInt32(),i=e.readByte();return e.skip(15),{sectionsCount:t,encoding:i}}
