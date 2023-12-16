@@ -48,7 +48,7 @@ export function getStrings(entries: InfoEntry[], data: Buffer) {
     const offsetFrom = offsets[i]!;
     const offsetTo = (offsets[i + 1] ?? data.length) - 1;
 
-    const offsetText = data.toString("binary", offsetFrom, offsetTo).trim();
+    const offsetText = data.toString("binary", offsetFrom, offsetTo);
 
     if (offsetText !== "") {
       strings.push([offsetsIndexed.get(i)!, offsetText]);

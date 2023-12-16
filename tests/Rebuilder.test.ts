@@ -24,7 +24,7 @@ describe("class Rebuilder", () => {
     sample.addString(20, "BBB", Buffer.from("\u00BB".repeat(10), "binary"));
     sample.addString(30, "CCC", Buffer.from("\u00CC".repeat(10), "binary"));
     sample.addString(40, "DDD", Buffer.from("\u00DD".repeat(10), "binary"));
-    sample.addString(50, "EEE", Buffer.from("\u00EE".repeat(10), "binary"));
+    sample.addString(50, "EEE\n", Buffer.from("\u00EE".repeat(10), "binary"));
 
     sample.addSection("XTR1", Buffer.from("\u00FF".repeat(22), "binary"));
     sample.addSection("XTR2", Buffer.from("\0\0\0\0\0\0\0\0TRIMMED!"));
