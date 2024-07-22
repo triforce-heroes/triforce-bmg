@@ -1,0 +1,1 @@
+import{BufferConsumer as e}from"@triforce-heroes/triforce-core/BufferConsumer";export function parseMessages(r){let t=new e(r,void 0,1),s=[];for(;!t.isConsumed();){let e=t.byteOffset,r=[];for(;0!==t.at();){let e=t.readUnsignedInt8();if(26===e){let e=t.readUnsignedInt8();r.push(...t.back(2).read(e))}else r.push(e)}t.skip(),s.push([e,Buffer.from(r).toString("latin1")])}return s}
