@@ -10,27 +10,25 @@
     "dist"
   ],
   "exports": {
-    ".": "./dist/index.js",
     "./Extract": "./dist/Extract.js",
     "./Rebuild": "./dist/Rebuild.js"
   },
   "scripts": {
     "build": "rimraf ./dist && tsc -p ./tsconfig.build.json && swc ./dist -d .",
-    "prettier": "prettier --check ./src",
-    "prettier:fix": "prettier --write ./src",
-    "eslint": "eslint ./src",
-    "eslint:fix": "eslint --fix ./src",
+    "prettier": "prettier --check ./src ./tests",
+    "prettier:fix": "prettier --write ./src ./tests",
+    "eslint": "eslint ./src ./tests",
+    "eslint:fix": "eslint --fix ./src ./tests",
     "test": "vitest"
   },
   "devDependencies": {
     "@rheactor/eslint-config-rheactor": "github:rheactor/eslint-config-rheactor",
     "@swc/cli": "^0.4.0",
-    "@swc/core": "^1.7.2",
+    "@swc/core": "^1.7.23",
     "@triforce-heroes/triforce-core": "github:triforce-heroes/triforce-core",
-    "@types/node": "^20.14.12",
+    "@types/node": "^22.5.4",
     "rimraf": "^6.0.1",
-    "tsx": "^4.16.2",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   }
 }
